@@ -10,11 +10,11 @@ public class MoveGround : MonoBehaviour
     public Grid tilemap;
    
     private float finalSpeed;
-    private bool move;
+    private int state;
     // Start is called before the first frame update
     void Start()
     {
-        move = false;
+        state = 0;
     }
 
     // Update is called once per frame
@@ -22,10 +22,10 @@ public class MoveGround : MonoBehaviour
     {
         if (Input.anyKeyDown)
         {
-            move = true;
+            state = 1;
         }
 
-        if (move == true)
+        if (state == 1)
         {
             ParallaxMoveGround();
         }
