@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   
         player.transform.position = new Vector3(-72, player.transform.position.y);
         if (Input.anyKey)
         {
@@ -36,11 +36,14 @@ public class PlayerController : MonoBehaviour
             playerState = "Sweep";
         }*/
 
+        
+
         if (state == 1)
         {
             if(playerState == "Run")
             {
                 Run();
+                
             }
             else if(playerState == "Jump")
             {
@@ -50,6 +53,8 @@ public class PlayerController : MonoBehaviour
             {
                 playerAnimation.Play("Sweep");
             }*/
+
+
         }
     }
 
@@ -60,9 +65,11 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+       
         if(collision.gameObject.tag == "Ground")
         {
             playerState = "Run";
         }
+        
     }
 }
