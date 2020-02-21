@@ -18,7 +18,7 @@ public class Jump : Physics2DObject
 
 	//this determines if the script has to check for when the player touches the ground to enable him to jump again
 	//if not, the player can jump even while in the air
-	public bool checkGround = true;
+	public static bool checkGround = true;
 
 	private bool canJump = true;
 
