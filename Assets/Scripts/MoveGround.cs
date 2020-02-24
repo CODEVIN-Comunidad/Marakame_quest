@@ -22,12 +22,17 @@ public class MoveGround : MonoBehaviour
     {
         if (Input.anyKeyDown)
         {
-            state = 1;
+                state = 1;
         }
 
         if (state == 1)
         {
             ParallaxMoveGround();
+        }
+
+        if (GameObject.Find("Player").transform.position.y <= -100)
+        {
+            state = 2;
         }
     }
 

@@ -6,9 +6,10 @@ public class PlayerController : MonoBehaviour
 {
     public GameObject player;
 
+    public static string playerState;
+
     private Animator playerAnimation;
     private int state;
-    public static string playerState;
     private int doubleJump;
 
     // Start is called before the first frame update
@@ -80,9 +81,9 @@ public class PlayerController : MonoBehaviour
     /*private void OnCollisionEnter2D(Collision2D collision)
     {
        
-        if(collision.gameObject.tag == "Ground")
+        if(collision.gameObject.tag == "DeadFlag")
         {
-            playerState = "Run";
+            state = 2;
         }
         
     }*/

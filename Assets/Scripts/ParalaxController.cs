@@ -35,6 +35,10 @@ public class ParalaxController : MonoBehaviour
             background3.uvRect = new Rect(background3.uvRect.x + finalSpeed * 4, 0f, 1f, 1f);
         }
         
+        if(GameObject.Find("Player").transform.position.y <= -100)
+        {
+            state = 2;
+        }
         
     }
 }
