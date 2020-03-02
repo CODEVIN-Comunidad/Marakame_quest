@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 [AddComponentMenu("Playground/Attributes/Health System")]
 public class HealthSystemAttribute : MonoBehaviour
@@ -12,7 +13,6 @@ public class HealthSystemAttribute : MonoBehaviour
 	// Will be set to 0 or 1 depending on how the GameObject is tagged
 	// it's -1 if the object is not a player
 	private int playerNumber;
-
 
 
 	private void Start()
@@ -45,29 +45,29 @@ public class HealthSystemAttribute : MonoBehaviour
 	}
 
 
-	// changes the energy from the player
-	// also notifies the UI (if present)
-	public void ModifyHealth(int amount)
-	{
-		//avoid going over the maximum health by forcin
-		if(health + amount > maxHealth)
-		{
-			amount = maxHealth - health;
-		}
-			
-		health += amount;
+    // changes the energy from the player
+    // also notifies the UI (if present)
+    public void ModifyHealth(int amount)
+    {
+        //avoid going over the maximum health by forcin
+        if (health + amount > maxHealth)
+        {
+            amount = maxHealth - health;
+        }
 
-		// Notify the UI so it will change the number in the corner
-		if(ui != null
-			&& playerNumber != -1)
-		{
-			ui.ChangeHealth(amount, playerNumber);
-		}
+        health += amount;
 
-		//DEAD
-		if(health <= 0)
-		{
-			Destroy(gameObject);
-		}
-	}
+        // Notify the UI so it will change the number in the corner
+        if (ui != null
+            && playerNumber != -1)
+        {
+            ui.ChangeHealth(amount, playerNumber);
+        }
+
+        //DEAD
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
 }

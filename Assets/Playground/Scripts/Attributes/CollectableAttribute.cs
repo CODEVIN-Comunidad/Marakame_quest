@@ -8,6 +8,10 @@ public class CollectableAttribute : MonoBehaviour
 	
 	private UIScript userInterface;
 
+    public bool playSound = false;
+
+    public AudioSource audioSrc;
+
 	private void Start()
 	{
 		// Find the UI in the scene and store a reference for later use
@@ -36,9 +40,12 @@ public class CollectableAttribute : MonoBehaviour
 				int playerId = (playerTag == "Player") ? 0 : 1;
 				userInterface.AddPoints(playerId, pointsWorth);
 			}
-
-			// then destroy this object
-			Destroy(gameObject);
+            if (playSound && audioSrc != null)
+            {
+                audioSrc.Play();
+            }
+            // then destroy this object
+            Destroy(gameObject);
 		}
 	}
 }

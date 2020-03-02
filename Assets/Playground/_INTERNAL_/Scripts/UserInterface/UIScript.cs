@@ -2,14 +2,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [AddComponentMenu("")]
 public class UIScript : MonoBehaviour
 {
 	[Header("Configuration")]
 	public Players numberOfPlayers = Players.OnePlayer;
-
-	public GameType gameType = GameType.Score;
+    public bool ReloadSceneOnLose = true;
+    public GameType gameType = GameType.Score;
 
 	// If the scoreToWin is -1, the game becomes endless (no win conditions, but you could do game over)
 	public int scoreToWin = 5;
@@ -125,6 +126,7 @@ public class UIScript : MonoBehaviour
 			gameOver = true;
 	        statsPanel.SetActive(false);
 	        gameOverPanel.SetActive(true);
+            Invoke("ReloadScene", 2);
 	    }
 	}
 
@@ -219,6 +221,11 @@ public class UIScript : MonoBehaviour
 		Life,
 		Endless
 	}
+
+    void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+    }
 }
 
 

@@ -25,16 +25,29 @@ public class Jump : Physics2DObject
 	// Read the input from the player
 	void Update()
 	{
-		if(canJump
-			&& Input.GetKeyDown(key))
-		{
-			// Apply an instantaneous upwards force
-			rigidbody2D.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);
-			canJump = !checkGround;
-		}
-	}
+        #if UNITY_STANDALONE || UNITY_EDITOR
+        if (canJump
+            && Input.GetKeyDown(key))
+        {
+            // Apply an instantaneous upwards force
+            rigidbody2D.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);
+            canJump = !checkGround;
+        }
+        #endif
+    }
 
-	private void OnCollisionEnter2D(Collision2D collisionData)
+    // Called by mobile input UI jump button
+    public void JumpButton()
+    {
+        if (canJump)
+        {
+            // Apply an instantaneous upwards force
+            rigidbody2D.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);
+            canJump = !checkGround;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collisionData)
 	{
 		if(checkGround
 			&& collisionData.gameObject.CompareTag(groundTag))

@@ -34,6 +34,7 @@ public class Enums
 	{
 		ArrowKeys,
 		WASD,
+        Mobile,
 	}
 
 	public enum Targets

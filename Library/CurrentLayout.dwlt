@@ -111,10 +111,10 @@ MonoBehaviour:
     y: 30
     width: 1280
     height: 888
-  m_MinSize: {x: 581, y: 474}
-  m_MaxSize: {x: 14004, y: 14048}
+  m_MinSize: {x: 579, y: 474}
+  m_MaxSize: {x: 14002, y: 14048}
   vertical: 0
-  controlID: 16
+  controlID: 36
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -266,8 +266,8 @@ MonoBehaviour:
     y: 0
     width: 277
     height: 888
-  m_MinSize: {x: 277, y: 74}
-  m_MaxSize: {x: 4002, y: 4024}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 19}
@@ -383,9 +383,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 30140000
-      m_LastClickedID: 5168
-      m_ExpandedIDs: d6fbffff0614000030140000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: d6fbffffae300000d2300000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -552,20 +552,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Characters/Enemies
   m_ViewMode: 1
   m_StartGridSize: 67
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Characters/Enemies
   m_LastFoldersGridSize: 67
   m_LastProjectPath: E:\Github\Marakame_quest
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 515}
-    m_SelectedIDs: 62120000
-    m_LastClickedID: 4706
-    m_ExpandedIDs: 000000004e0c00006c0e0000a60e0000d40e0000f40e0000200f00007a0f0000ba0f0000fc0f00007410000010110000a412000000ca9a3b
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: 96390000
+    m_LastClickedID: 14742
+    m_ExpandedIDs: 00000000f6280000142b00004e2b00007c2b00009c2b0000c82b0000222c0000622c0000a42c00001c2d0000b82d00004c2f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -593,7 +593,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000004e0c00006c0e0000a60e0000d40e0000f40e0000200f00007a0f0000ba0f0000fc0f00007410000010110000a4120000
+    m_ExpandedIDs: 00000000f6280000142b00004e2b00007c2b00009c2b0000c82b0000222c0000622c0000a42c00001c2d0000b82d00004c2f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -620,7 +620,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300008a4f000028400000807500005c760000b8340000000000003a37000056340000e6380000b63700008036000072350000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

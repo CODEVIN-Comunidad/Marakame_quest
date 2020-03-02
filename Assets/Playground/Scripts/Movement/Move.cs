@@ -25,21 +25,23 @@ public class Move : Physics2DObject
 
 	// Update gets called every frame
 	void Update ()
-	{	
-		// Moving with the arrow keys
-		if(typeOfControl == Enums.KeyGroups.ArrowKeys)
+	{
+        //#if UNITY_STANDALONE || !UNITY_EDITOR
+        // Moving with the arrow keys
+        if(typeOfControl == Enums.KeyGroups.ArrowKeys)
 		{
 			moveHorizontal = Input.GetAxis("Horizontal");
 			moveVertical = Input.GetAxis("Vertical");
 		}
-		else
+		else if (typeOfControl == Enums.KeyGroups.WASD)
 		{
 			moveHorizontal = Input.GetAxis("Horizontal2");
 			moveVertical = Input.GetAxis("Vertical2");
 		}
-
-		//zero-out the axes that are not needed, if the movement is constrained
-		switch(movementType)
+        //#endif
+    
+        //zero-out the axes that are not needed, if the movement is constrained
+        switch(movementType)
 		{
 			case Enums.MovementType.OnlyHorizontal:
 				moveVertical = 0f;
@@ -72,4 +74,27 @@ public class Move : Physics2DObject
 		// Apply the force to the Rigidbody2d
 		rigidbody2D.AddForce(movement * speed * 10f);
 	}
+
+
+    // Set the horizontal move direction to left (-1) or right (1)
+    // Called by mobile input UI buttons
+    public void SetHorizontalInput(int input)
+    {
+        moveHorizontal = input;
+    }
+
+    public void SetMoveLeft()
+    {
+        moveHorizontal = -1;
+    }
+
+    public void SetMoveRight()
+    {
+        moveHorizontal = 1;
+    }
+
+    public void StopMoving()
+    {
+        moveHorizontal = 0;
+    }
 }
